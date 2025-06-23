@@ -5,3 +5,4 @@ Form is integrated using Short code
 Additional Thank you page (/thank-you) and order cancel page (/payment-cancelled) needs to be created as per the slug defined in the code. 
 Short codes used eco_cheque_form
 API goes in the WP-config.php file
+Created a js folder and place the script.js inside it. 
