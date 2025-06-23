@@ -127,8 +127,7 @@
 
     // AJAX payment handler
     function ecocheque_create_payment() {
-        $mollie_api_url = "https://api.mollie.com/v2/payments";
-       // $api_key = "test_59Px7DFuEak3yTChVK4btcfnTUtWWP";//
+        $mollie_api_url = "https://api.mollie.com/v2/payments";      
 $api_key = defined('MY_PLUGIN_API_KEY') ? MY_PLUGIN_API_KEY : '';	
         $amount = floatval($_POST['amount']);
         $order_number = 'ECO' . strtoupper(uniqid());
