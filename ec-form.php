@@ -14,8 +14,12 @@
     });
     // Shortcode & scripts
     add_filter('wp_mail_from_name', function($name) {
-    return 'Pay with ecoCheques';
+    return 'change title here';
 		});
+// Activate this if you want to change email address
+//add_filter('wp_mail_from', function($email) {
+//     return 'wordpress@abhinav.com';
+// });
     add_shortcode('eco_cheque_form', 'eco_cheque_form_shortcode');
     add_action('wp_enqueue_scripts', 'eco_cheque_form_scripts');
     add_action('wp_ajax_nopriv_ecocheque_create_payment', 'ecocheque_create_payment');
@@ -90,7 +94,7 @@
                 <input type="email" id="eco-email" required><br>
 
                 <label class="checkbox-rq">
-                    <p>Agree to the <a href="https://paywithecocheques.be/terms-conditions/" target="_blank">terms and conditions</a> and that your info is processed in accordance with our <a href="https://paywithecocheques.be/privacy-policy/" target="_blank">privacy policy</a><p>
+                    <p>Agree to the <a href="#" target="_blank">terms and conditions</a> and that your info is processed in accordance with our <a href="#" target="_blank">privacy policy</a><p>
                     <input type="checkbox" id="checkbox-step3" required>
                 </label>
             </div>
@@ -486,7 +490,7 @@ add_action('template_redirect', function () {
         wp_mail(get_option('admin_email'), $admin_subject, $admin_message);
 
         // Buyer email
-        $message = '<div><img src="https://paywithecocheques.be/wp-content/uploads/2025/06/Logo_v4-1-scaled.png" style="max-width:200px; margin-bottom:20px;"></div>';
+        $message = '<div><img src="LOGO SOURCE HERE" style="max-width:200px; margin-bottom:20px;"></div>';
         $message .= "<h2>EcoCheque Order Details</h2>";
         $message .= "<p><strong>Order Number:</strong> {$data['order_number']}</p>";
         $message .= "<p>This is a summary of your order. Your payment has been successfully completed.</p>";
@@ -506,7 +510,7 @@ add_action('template_redirect', function () {
         wp_mail($data['email'], "EcoCheque Order Confirmed", $message, ['Content-Type: text/html; charset=UTF-8']);
 
         // Seller email (reuse message or create new)
-        $message = '<div><img src="https://paywithecocheques.be/wp-content/uploads/2025/06/Logo_v4-1-scaled.png" style="max-width:200px; margin-bottom:20px;"></div>';
+        $message = '<div><img src="LOGO SOURCE HERE" style="max-width:200px; margin-bottom:20px;"></div>';
         $message .= "<h2>EcoCheque Order Details</h2>";
         $message .= "<p><strong>Order Number:</strong> {$data['order_number']}</p>";
         $message .= "<p>This is a summary of the order. The payment has been successfully completed.</p>";
